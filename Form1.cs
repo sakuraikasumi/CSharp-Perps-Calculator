@@ -6,5 +6,9 @@ namespace CSharp_Perps_Calculator
         {
             InitializeComponent();
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
