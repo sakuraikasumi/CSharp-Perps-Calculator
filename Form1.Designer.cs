@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            longbutton = new RadioButton();
+            shortbutton = new RadioButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -74,45 +74,47 @@
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
-            // radioButton1
+            // longbutton
             // 
-            radioButton1.Appearance = Appearance.Button;
-            radioButton1.AutoSize = true;
-            radioButton1.Cursor = Cursors.Hand;
-            radioButton1.Dock = DockStyle.Fill;
-            radioButton1.Location = new Point(6, 9);
-            radioButton1.Margin = new Padding(3, 6, 3, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(257, 48);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "做多";
-            radioButton1.TextAlign = ContentAlignment.MiddleCenter;
-            radioButton1.UseVisualStyleBackColor = true;
+            longbutton.Appearance = Appearance.Button;
+            longbutton.AutoSize = true;
+            longbutton.Cursor = Cursors.Hand;
+            longbutton.Dock = DockStyle.Fill;
+            longbutton.Location = new Point(6, 9);
+            longbutton.Margin = new Padding(3, 6, 3, 3);
+            longbutton.Name = "longbutton";
+            longbutton.Size = new Size(257, 48);
+            longbutton.TabIndex = 0;
+            longbutton.TabStop = true;
+            longbutton.Text = "做多";
+            longbutton.TextAlign = ContentAlignment.MiddleCenter;
+            longbutton.UseVisualStyleBackColor = true;
+            longbutton.CheckedChanged += longbutton_CheckedChanged;
             // 
-            // radioButton2
+            // shortbutton
             // 
-            radioButton2.Appearance = Appearance.Button;
-            radioButton2.AutoSize = true;
-            radioButton2.Cursor = Cursors.Hand;
-            radioButton2.Dock = DockStyle.Fill;
-            radioButton2.Location = new Point(269, 9);
-            radioButton2.Margin = new Padding(3, 6, 3, 3);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(258, 48);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "做空";
-            radioButton2.TextAlign = ContentAlignment.MiddleCenter;
-            radioButton2.UseVisualStyleBackColor = true;
+            shortbutton.Appearance = Appearance.Button;
+            shortbutton.AutoSize = true;
+            shortbutton.Cursor = Cursors.Hand;
+            shortbutton.Dock = DockStyle.Fill;
+            shortbutton.Location = new Point(269, 9);
+            shortbutton.Margin = new Padding(3, 6, 3, 3);
+            shortbutton.Name = "shortbutton";
+            shortbutton.Size = new Size(258, 48);
+            shortbutton.TabIndex = 1;
+            shortbutton.TabStop = true;
+            shortbutton.Text = "做空";
+            shortbutton.TextAlign = ContentAlignment.MiddleCenter;
+            shortbutton.UseVisualStyleBackColor = true;
+            shortbutton.CheckedChanged += shortbutton_CheckedChanged;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(radioButton1, 0, 0);
-            tableLayoutPanel1.Controls.Add(radioButton2, 1, 0);
+            tableLayoutPanel1.Controls.Add(longbutton, 0, 0);
+            tableLayoutPanel1.Controls.Add(shortbutton, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Top;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -168,6 +170,7 @@
             button1.TabIndex = 0;
             button1.Text = "-";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -179,6 +182,7 @@
             button2.TabIndex = 1;
             button2.Text = "+";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // textBox1
             // 
@@ -203,6 +207,7 @@
             trackBar1.TabIndex = 6;
             trackBar1.TickFrequency = 25;
             trackBar1.Value = 1;
+            trackBar1.Scroll += trackBar1_Scroll;
             // 
             // tableLayoutPanel4
             // 
@@ -530,7 +535,7 @@
             // 
             // button3
             // 
-            button3.BackColor = SystemColors.Control;
+            button3.BackColor = SystemColors.ButtonHighlight;
             button3.Cursor = Cursors.Hand;
             button3.Location = new Point(113, 738);
             button3.Name = "button3";
@@ -551,7 +556,7 @@
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "合约计算器";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
@@ -571,8 +576,8 @@
 
         #endregion
 
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton longbutton;
+        private RadioButton shortbutton;
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel3;
