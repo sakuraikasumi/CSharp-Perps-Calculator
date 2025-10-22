@@ -194,6 +194,7 @@
             textBox1.TabIndex = 2;
             textBox1.Text = "1x";
             textBox1.TextAlign = HorizontalAlignment.Center;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // trackBar1
             // 
@@ -201,7 +202,6 @@
             trackBar1.Location = new Point(9, 84);
             trackBar1.Margin = new Padding(9);
             trackBar1.Maximum = 100;
-            trackBar1.Minimum = 1;
             trackBar1.Name = "trackBar1";
             trackBar1.Size = new Size(515, 40);
             trackBar1.TabIndex = 6;
@@ -410,7 +410,7 @@
             tableLayoutPanel6.Controls.Add(label16, 2, 2);
             tableLayoutPanel6.Controls.Add(label17, 1, 0);
             tableLayoutPanel6.Dock = DockStyle.Bottom;
-            tableLayoutPanel6.Location = new Point(15, 49);
+            tableLayoutPanel6.Location = new Point(15, 38);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 3;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
@@ -424,33 +424,35 @@
             label19.AutoSize = true;
             label19.BorderStyle = BorderStyle.Fixed3D;
             label19.Dock = DockStyle.Fill;
+            label19.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold);
             label19.Location = new Point(151, 105);
             label19.Margin = new Padding(3, 3, 3, 0);
             label19.Name = "label19";
             label19.Size = new Size(274, 49);
             label19.TabIndex = 11;
-            label19.TextAlign = ContentAlignment.TopRight;
+            label19.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label18
             // 
             label18.AutoSize = true;
             label18.BorderStyle = BorderStyle.Fixed3D;
             label18.Dock = DockStyle.Fill;
+            label18.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold);
             label18.Location = new Point(151, 54);
             label18.Margin = new Padding(3, 3, 3, 0);
             label18.Name = "label18";
             label18.Size = new Size(274, 48);
             label18.TabIndex = 10;
-            label18.TextAlign = ContentAlignment.TopRight;
+            label18.TextAlign = ContentAlignment.MiddleRight;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Dock = DockStyle.Fill;
-            label9.Location = new Point(3, 3);
-            label9.Margin = new Padding(3, 3, 3, 0);
+            label9.Location = new Point(3, 10);
+            label9.Margin = new Padding(3, 10, 3, 0);
             label9.Name = "label9";
-            label9.Size = new Size(142, 48);
+            label9.Size = new Size(142, 41);
             label9.TabIndex = 0;
             label9.Text = "起始保证金";
             // 
@@ -458,10 +460,10 @@
             // 
             label10.AutoSize = true;
             label10.Dock = DockStyle.Fill;
-            label10.Location = new Point(3, 54);
-            label10.Margin = new Padding(3, 3, 3, 0);
+            label10.Location = new Point(3, 61);
+            label10.Margin = new Padding(3, 10, 3, 0);
             label10.Name = "label10";
-            label10.Size = new Size(142, 48);
+            label10.Size = new Size(142, 41);
             label10.TabIndex = 1;
             label10.Text = "盈亏";
             // 
@@ -469,10 +471,10 @@
             // 
             label11.AutoSize = true;
             label11.Dock = DockStyle.Fill;
-            label11.Location = new Point(3, 105);
-            label11.Margin = new Padding(3, 3, 3, 0);
+            label11.Location = new Point(3, 112);
+            label11.Margin = new Padding(3, 10, 3, 0);
             label11.Name = "label11";
-            label11.Size = new Size(142, 49);
+            label11.Size = new Size(142, 42);
             label11.TabIndex = 2;
             label11.Text = "回报率";
             // 
@@ -480,8 +482,8 @@
             // 
             label14.AutoSize = true;
             label14.Dock = DockStyle.Top;
-            label14.Location = new Point(431, 3);
-            label14.Margin = new Padding(3, 3, 3, 0);
+            label14.Location = new Point(431, 12);
+            label14.Margin = new Padding(3, 12, 3, 0);
             label14.Name = "label14";
             label14.Size = new Size(69, 31);
             label14.TabIndex = 6;
@@ -491,8 +493,8 @@
             // 
             label15.AutoSize = true;
             label15.Dock = DockStyle.Top;
-            label15.Location = new Point(431, 54);
-            label15.Margin = new Padding(3, 3, 3, 0);
+            label15.Location = new Point(431, 63);
+            label15.Margin = new Padding(3, 12, 3, 0);
             label15.Name = "label15";
             label15.Size = new Size(69, 31);
             label15.TabIndex = 7;
@@ -502,8 +504,8 @@
             // 
             label16.AutoSize = true;
             label16.Dock = DockStyle.Top;
-            label16.Location = new Point(431, 105);
-            label16.Margin = new Padding(3, 3, 3, 0);
+            label16.Location = new Point(431, 114);
+            label16.Margin = new Padding(3, 12, 3, 0);
             label16.Name = "label16";
             label16.Size = new Size(69, 31);
             label16.TabIndex = 8;
@@ -514,12 +516,13 @@
             label17.AutoSize = true;
             label17.BorderStyle = BorderStyle.Fixed3D;
             label17.Dock = DockStyle.Fill;
+            label17.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold);
             label17.Location = new Point(151, 3);
             label17.Margin = new Padding(3, 3, 3, 0);
             label17.Name = "label17";
             label17.Size = new Size(274, 48);
             label17.TabIndex = 9;
-            label17.TextAlign = ContentAlignment.TopRight;
+            label17.TextAlign = ContentAlignment.MiddleRight;
             // 
             // groupBox1
             // 
@@ -528,7 +531,7 @@
             groupBox1.Location = new Point(0, 514);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(15);
-            groupBox1.Size = new Size(533, 218);
+            groupBox1.Size = new Size(533, 207);
             groupBox1.TabIndex = 8;
             groupBox1.TabStop = false;
             groupBox1.Text = "计算结果";
@@ -537,7 +540,8 @@
             // 
             button3.BackColor = SystemColors.ButtonHighlight;
             button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(113, 738);
+            button3.Font = new Font("Microsoft YaHei UI", 10F);
+            button3.Location = new Point(114, 738);
             button3.Name = "button3";
             button3.Size = new Size(306, 74);
             button3.TabIndex = 9;
